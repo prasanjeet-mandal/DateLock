@@ -1,0 +1,124 @@
+# ==============================================================================
+# DATELOCK - GITIGNORE CONFIGURATION
+# ==============================================================================
+
+# AI & Assistant Directories
+.claude/
+.claude
+.gemini/
+
+# ------------------------------------------------------------------------------
+# Sensitive Credentials, Secrets & Keys
+# ------------------------------------------------------------------------------
+# Environment Variables
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Preserve examples/templates
+!.env.example
+!.env.template
+
+# Private Keys, Certificates and Tokens
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+*.cer
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# API Keys, Cloud & Service Credentials
+credentials.json
+client_secret*.json
+service-account*.json
+google-credentials*.json
+*credential*.json
+*secret*.json
+aws-credentials*
+.netrc
+.npmrc
+
+# Database credentials & local dumps
+*.sql
+*.dump
+*.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------------------------------------------------------
+# Dependencies & Package Managers
+# ------------------------------------------------------------------------------
+node_modules/
+jspm_packages/
+.pnp
+.pnp.js
+
+# ------------------------------------------------------------------------------
+# Build & Output Folders
+# ------------------------------------------------------------------------------
+dist/
+dist-ssr/
+build/
+out/
+.cache/
+.parcel-cache/
+
+# ------------------------------------------------------------------------------
+# Application Runtime Data, Uploads & Downloads
+# ------------------------------------------------------------------------------
+uploads/
+downloads/
+server/uploads/*
+!server/uploads/.gitkeep
+server/downloads/*
+!server/downloads/.gitkeep
+server/data/*
+!server/data/.gitkeep
+temp/
+tmp/
+
+# ------------------------------------------------------------------------------
+# Logs & Process Output
+# ------------------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# OS & Editor Specific Files
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+
+# Editors & IDEs
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
