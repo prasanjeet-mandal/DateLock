@@ -56,6 +56,10 @@ const corsOptions = {
     if (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')) {
       return callback(null, true);
     }
+    // Allow Vercel preview and production domains
+    if (origin.endsWith('.vercel.app') || (process.env.VERCEL_URL && origin.includes(process.env.VERCEL_URL))) {
+      return callback(null, true);
+    }
     callback(new Error('Cross-Origin Request Blocked by DateLock CORS Policy'));
   },
   credentials: true,
@@ -152,8 +156,9 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-// Export app and server for tests and modular execution
+// Export app and server for tests, modular execution, and Vercel serverless deployment
 export { app, server, io };
+export default app;
 
 // Only listen if executed directly, not when imported by test runner
 const isDirectRun = process.argv[1] && (
